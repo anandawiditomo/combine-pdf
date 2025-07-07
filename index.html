@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combine PDF</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1><span>Combine</span> <span>PDF</span></h1>
+    <p>Aplikasi yang mudah digunakan ini memungkinkan Anda menggabungkan beberapa file PDF atau gambar menjadi satu dokumen PDF tanpa perlu menginstal software apa pun.</p>
+    <div class="instructions">
+        <ol>
+            <li>Pilih file PDF dari komputer Anda, atau seret file tersebut ke area unggahan.</li>
+            <li>Seret dan jatuhkan file untuk mengubah urutannya. Setelah siap, klik tombol GABUNGKAN.</li>
+        </ol>
+    </div>
+
+    <input type="file" id="fileInput" multiple accept=".pdf" hidden>
+    <div>
+        <button class="btn upload" onclick="document.getElementById('fileInput').click()">UNGGAH FILE</button>
+        <button class="btn delete" onclick="clearFiles()">HAPUS</button>
+    </div>
+
+    <div class="upload-box" id="dropZone">
+        <p>Letakkan File Anda Disini</p>
+        <ul id="fileList"></ul>
+    </div>
+
+<div id="progressContainer" style="display:none; margin: 20px 0;">
+    <div style="background:#eee; height: 20px; border-radius: 10px; overflow: hidden;">
+        <div id="progressBar" style="height: 100%; width: 0%; background: #4caf50; transition: width 0.3s;"></div>
+    </div>
+    <p id="progressText" style="text-align:center; margin-top: 5px;">Menggabungkan: 0%</p>
+</div>
+
+    <button class="btn combine" onclick="combineFiles()">GABUNGKAN (0)</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
